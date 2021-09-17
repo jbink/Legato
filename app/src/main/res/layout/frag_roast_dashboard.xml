@@ -1,0 +1,903 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:weightSum="2"
+    android:paddingRight="30dp"
+    android:paddingLeft="30dp"
+    android:paddingTop="20dp"
+    android:paddingBottom="20dp"
+    android:background="@color/black">
+
+    <!-- 왼쪽 Layout -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="16dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="6dp">
+            <LinearLayout
+                android:id="@+id/roast_dashboard_lay_title"
+                android:layout_toLeftOf="@+id/roast_dashboard_lay_step"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/roast_dashboard_txt_profile_type"
+                    style="@style/txt_style_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#6b6b6b"
+                    android:text="BASIC"/>
+
+                <TextView
+                    android:id="@+id/roast_dashboard_txt_profile_name"
+                    style="@style/txt_style_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="22dp"
+                    android:textColor="@color/white"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/roast_dashboard_lay_step"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageButton
+                        android:id="@+id/roast_dashboard_ibtn_roast"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_cirde_on"/>
+
+                    <TextView
+                        android:id="@+id/roast_dashboard_txt_roast"
+                        style="@style/txt_style_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14dp"
+                        android:textColor="@color/white"
+                        android:text="Roasting"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageButton
+                        android:id="@+id/roast_dashboard_ibtn_ror"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_cirde_off"/>
+
+                    <TextView
+                        android:id="@+id/roast_dashboard_txt_ror"
+                        style="@style/txt_style_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14dp"
+                        android:textColor="@color/COLOR_3B3B3B"
+                        android:text="ROR"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageButton
+                        android:id="@+id/roast_dashboard_ibtn_ad"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_cirde_off"/>
+
+                    <TextView
+                        android:id="@+id/roast_dashboard_txt_ad"
+                        style="@style/txt_style_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14dp"
+                        android:textColor="@color/COLOR_3B3B3B"
+                        android:text="AD"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </RelativeLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/COLOR_2D2D2D" />
+
+        <!-- 단계표시 -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/roast_dashboard_iv_step_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_step_1_disable"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_arrow_disable"/>
+                <ImageView
+                    android:id="@+id/roast_dashboard_iv_step_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_step_2_disable"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_arrow_disable"/>
+                <ImageView
+                    android:id="@+id/roast_dashboard_iv_step_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_step_3_disable"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_arrow_disable"/>
+                <ImageView
+                    android:id="@+id/roast_dashboard_iv_step_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_step_4_disable"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/frag_coffee_chart_roast"
+            android:layout_margin="15dp"
+            android:visibility="visible"
+            android:layout_above="@id/frag_coffee_lay_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/frag_coffee_chart_ror"
+            android:layout_margin="15dp"
+            android:visibility="gone"
+            android:layout_above="@id/frag_coffee_lay_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/frag_coffee_chart_ad"
+            android:visibility="gone"
+            android:layout_margin="15dp"
+            android:layout_above="@id/frag_coffee_lay_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+    <!-- 오른쪽 Layout -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_marginLeft="16dp"
+        android:paddingRight="6dp"
+        android:paddingLeft="6dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                style="@style/txt_style_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:textColor="@color/COLOR_6B6B6B"
+                android:text="Roasting time"/>
+
+            <TextView
+                android:id="@+id/roast_dashboard_roasting_time"
+                android:layout_marginLeft="22dp"
+                style="@style/txt_style_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                android:text="00 : 00"/>
+
+            <RelativeLayout
+                android:gravity="center_vertical"
+                android:layout_marginLeft="32dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    style="@style/txt_style_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="normal"
+                    android:textSize="15dp"
+                    android:textColor="@color/COLOR_6B6B6B"
+                    android:text="Temp"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:layout_alignParentRight="true">
+
+                    <TextView
+                        android:id="@+id/roast_dashboard_current_temperature"
+                        android:layout_marginLeft="10dp"
+                        style="@style/txt_style_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="25dp"
+                        android:textColor="@color/white"
+                        android:text="0"/>
+                    <TextView
+                        style="@style/txt_style_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12.5dp"
+                        android:textColor="@color/white"
+                        android:text="℃"/>
+                </LinearLayout>
+
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="15dp"
+            android:layout_centerInParent="true"
+            android:background="@color/COLOR_2D2D2D" />
+
+        <!-- SYSTEM, Target Temp, Time -->
+        <LinearLayout
+            android:layout_marginTop="9dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/txt_style_medium"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:text="SYSTEM"
+                        android:textColor="@color/COLOR_3B3B3B"
+                        android:textSize="15sp"
+                        android:textStyle="normal" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2.2">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+                        <TextView
+                            android:layout_centerVertical="true"
+                            style="@style/txt_style_medium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="normal"
+                            android:textSize="10dp"
+                            android:textColor="@color/COLOR_6B6B6B"
+                            android:text="Target Temp"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/roast_dashboard_target_temperature"
+                                style="@style/txt_style_medium"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="12.5dp"
+                                android:textColor="@color/COLOR_B4B4B4"
+                                android:text="0"/>
+                            <TextView
+                                style="@style/txt_style_medium"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="12.5dp"
+                                android:textColor="@color/COLOR_B4B4B4"
+                                android:text="℃"/>
+
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+˛
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="0.2"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:weightSum="2">
+
+                        <TextView
+                            style="@style/txt_style_medium"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="Time"
+                            android:textColor="@color/COLOR_6B6B6B"
+                            android:textSize="10dp" />
+
+                        <TextView
+                            android:id="@+id/roast_dashboard_time"
+                            style="@style/txt_style_medium"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/COLOR_B4B4B4"
+                            android:text="00 : 00"
+                            android:textSize="12.5dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_marginLeft="80dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:layout_centerInParent="true"
+            android:background="@color/COLOR_2D2D2D" />
+        <!-- ROR, AD -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/txt_style_medium"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text=""/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2.2">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        style="@style/txt_style_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="ROR"
+                        android:textColor="@color/COLOR_6B6B6B"
+                        android:textSize="10dp"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/roast_dashboard_ror"
+                            style="@style/txt_style_medium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="@color/COLOR_B4B4B4"
+                            android:textSize="12.5dp" />
+                        <TextView
+                            style="@style/txt_style_medium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="℃ / min"
+                            android:textColor="@color/COLOR_B4B4B4"
+                            android:textSize="12.5dp" />
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="0.2"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:weightSum="2">
+
+                    <TextView
+                        style="@style/txt_style_medium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="AD"
+                        android:textColor="@color/COLOR_6B6B6B"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/roast_dashboard_ad"
+                        style="@style/txt_style_medium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:text="0"
+                        android:textColor="@color/COLOR_B4B4B4"
+                        android:textSize="12.5dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="9dp"
+            android:layout_centerInParent="true"
+            android:background="@color/COLOR_2D2D2D" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="normal"
+                android:textSize="15dp"
+                android:textColor="#3b3b3b"
+                android:text="FIRE Edit"/>
+
+        </LinearLayout>
+
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:id="@+id/frag_coffee_force_stop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="35dp"
+                    android:layout_marginRight="5dp">
+                    <TextView
+                        android:id="@+id/frag_roast_btn_force_start"
+                        style="@style/txt_style_medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:gravity="center"
+                        android:background="@drawable/sel_btn_start"
+                        android:textColor="@color/COLOR_6B6B6B"
+                        android:text="@string/start_roasting"/>
+
+                    <TextView
+                        android:visibility="gone"
+                        android:id="@+id/frag_roast_btn_force_reset_temp"
+                        style="@style/txt_style_medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:gravity="center"
+                        android:background="@drawable/sel_btn_start"
+                        android:textColor="@color/COLOR_6B6B6B"
+                        android:text="@string/reset_temperature"/>
+
+                    <Button
+                        android:visibility="gone"
+                        android:id="@+id/frag_roast_btn_force_restart"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/sel_btn_restart"/>
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/frag_roast_btn_force_stop"
+                    style="@style/txt_style_medium"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="35dp"
+                    android:gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/sel_btn_start"
+                    android:textColor="@color/COLOR_6B6B6B"
+                    android:text="@string/forced_termination"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_above="@id/frag_coffee_force_stop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="4.5"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:gravity="right"
+                    android:weightSum="12"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/txt_style_medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:textSize="8dp"
+                        android:layout_weight="1"
+                        android:textColor="@color/COLOR_3B3B3B"
+                        android:text=""/>
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        style="@style/txt_style_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:textSize="8dp"
+                        android:textColor="@color/COLOR_3B3B3B"
+                        android:text="100%"/>
+                    <TextView
+                        android:gravity="center"
+                        style="@style/txt_style_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:textSize="8dp"
+                        android:textColor="@color/COLOR_3B3B3B"
+                        android:text="90%"/>
+                    <TextView
+                        android:gravity="center"
+                        style="@style/txt_style_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:textSize="8dp"
+                        android:textColor="@color/COLOR_3B3B3B"
+                        android:text="80%"/>
+                    <TextView
+                        android:gravity="center"
+                        style="@style/txt_style_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:textSize="8dp"
+                        android:textColor="@color/COLOR_3B3B3B"
+                        android:text="70%"/>
+                    <TextView
+                        android:gravity="center"
+                        style="@style/txt_style_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:textSize="8dp"
+                        android:textColor="@color/COLOR_3B3B3B"
+                        android:text="60%"/>
+                    <TextView
+                        android:gravity="center"
+                        style="@style/txt_style_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:textSize="8dp"
+                        android:textColor="@color/COLOR_3B3B3B"
+                        android:text="50%"/>
+                    <TextView
+                        android:gravity="center"
+                        style="@style/txt_style_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:textSize="8dp"
+                        android:textColor="@color/COLOR_3B3B3B"
+                        android:text="40%"/>
+                    <TextView
+                        android:gravity="center"
+                        style="@style/txt_style_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:textSize="8dp"
+                        android:textColor="@color/COLOR_3B3B3B"
+                        android:text="30%"/>
+                    <TextView
+                        android:gravity="center"
+                        style="@style/txt_style_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:textSize="8dp"
+                        android:textColor="@color/COLOR_3B3B3B"
+                        android:text="20%"/>
+                    <TextView
+                        android:gravity="center"
+                        style="@style/txt_style_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:textSize="8dp"
+                        android:textColor="@color/COLOR_3B3B3B"
+                        android:text="10%"/>
+                    <TextView
+                        android:gravity="center"
+                        style="@style/txt_style_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:textSize="8dp"
+                        android:textColor="@color/COLOR_3B3B3B"
+                        android:text="0%"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:weightSum="11"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/seekBar_value_0"
+                        style="@style/txt_style_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="60%"
+                        android:textColor="@color/COLOR_3B3B3B"
+                        android:textSize="14dp" />
+
+
+                    <net.jfun.legato.util.VerticalSeekbar
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/seekBar_0"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="10"
+                        android:padding="0dp"
+                        android:max="100"
+                        android:thumb="@null"
+                        android:min="0"
+                        android:progress="60"
+                        android:progressDrawable="@drawable/progressbar_set_temperature_disable"
+                        android:splitTrack="false" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:weightSum="11"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/seekBar_value_1"
+                        style="@style/txt_style_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="100%"
+                        android:textColor="@color/COLOR_3B3B3B"
+                        android:textSize="14dp" />
+
+
+                    <net.jfun.legato.util.VerticalSeekbar
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/seekBar_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="10"
+                        android:max="100"
+                        android:min="0"
+                        android:thumb="@null"
+                        android:progress="100"
+                        android:progressDrawable="@drawable/progressbar_set_temperature_disable"
+                        android:splitTrack="false" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:weightSum="11"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:gravity="center"
+                        android:id="@+id/seekBar_value_2"
+                        style="@style/txt_style_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:textSize="14dp"
+                        android:textColor="@color/COLOR_3B3B3B"
+                        android:text="40%"/>
+
+                    <net.jfun.legato.util.VerticalSeekbar
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/seekBar_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="10"
+                        android:max="100"
+                        android:min="0"
+                        android:thumb="@null"
+                        android:progress="100"
+                        android:progressDrawable="@drawable/progressbar_set_temperature_disable"
+                        android:splitTrack="false" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:weightSum="11"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/seekBar_value_3"
+                        style="@style/txt_style_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="100%"
+                        android:textColor="@color/COLOR_3B3B3B"
+                        android:textSize="14dp" />
+
+
+                    <net.jfun.legato.util.VerticalSeekbar
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/seekBar_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="10"
+                        android:max="100"
+                        android:min="0"
+                        android:thumb="@null"
+                        android:progress="100"
+                        android:progressDrawable="@drawable/progressbar_set_temperature_disable"
+                        android:splitTrack="false" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:weightSum="11"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/seekBar_value_4"
+                        style="@style/txt_style_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="100%"
+                        android:textColor="@color/COLOR_3B3B3B"
+                        android:textSize="14dp" />
+
+
+                    <net.jfun.legato.util.VerticalSeekbar
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/seekBar_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="10"
+                        android:max="100"
+                        android:min="0"
+                        android:thumb="@null"
+                        android:progress="100"
+                        android:progressDrawable="@drawable/progressbar_set_temperature_disable"
+                        android:splitTrack="false" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

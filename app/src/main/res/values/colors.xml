@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#000</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="bg_back">#f5f4f3</color>
+    <color name="COLOR_DDDDDD">#dddddd</color>
+    <color name="COLOR_BBBBBB">#bbbbbb</color>
+    <color name="COLOR_454545">#454545</color>
+    <color name="COLOR_666666">#666666</color>
+    <color name="COLOR_E9203C">#e9203c</color>
+    <color name="COLOR_999999">#999999</color>
+    <color name="COLOR_F1F1F1">#F1F1F1</color>
+    <color name="COLOR_3B3B3B">#3B3B3B</color>
+    <color name="COLOR_6B6B6B">#6B6B6B</color>
+    <color name="COLOR_2D2D2D">#2D2D2D</color>
+    <color name="COLOR_202020">#202020</color>
+    <color name="COLOR_141414">#141414</color>
+    <color name="COLOR_B4B4B4">#B4B4B4</color>
+    <color name="COLOR_F5F5F5">#F5F5F5</color>
+
+    <color name="COLOR_YELLOW">#ffb41f</color>
+    <color name="COLOR_PURPLE">#a975de</color>
+    <color name="COLOR_ORANGE">#ff813c</color>
+    <color name="COLOR_RED">#FF0000</color>
+    <color name="COLOR_GRAY">#2D2D2D</color>
+    <color name="COLOR_GREEN">#8acd91</color>
+    <color name="COLOR_BLUE">#0000ff</color>
+    <color name="COLOR_DIVIDER">#364e65</color>
+
+
+    <color name="RGB_202020">#202020</color>
+</resources>

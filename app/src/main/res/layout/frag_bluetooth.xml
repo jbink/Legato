@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:weightSum="2"
+    android:paddingRight="30dp"
+    android:paddingLeft="30dp"
+    android:paddingTop="20dp"
+    android:paddingBottom="20dp"
+    android:background="@color/black">
+
+    <!-- 왼쪽 Layout -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="16dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/frag_ble_connect_left_before"
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_marginTop="15dp"
+                android:id="@+id/frag_ble_left_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true">
+                <ImageButton
+                    android:id="@+id/frag_ble_btn_scan_device"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_bluetooth_off"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:padding="10dp"
+                android:background="@drawable/back_scan_device"
+                android:layout_above="@id/frag_ble_left_bottom"
+                android:layout_width="260dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:weightSum="10">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pair_device"
+                    android:textSize="14dp"
+                    android:textColor="@color/COLOR_6B6B6B"
+                    android:paddingLeft="10dp"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/COLOR_6B6B6B"/>
+
+                <ListView
+                    android:id="@+id/pair_device"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:paddingRight="12dp"
+                    android:paddingLeft="12dp"
+                    android:layout_weight="3"/>
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/connect_device"
+                    android:textColor="@color/COLOR_6B6B6B"
+                    android:textSize="14dp"
+                    android:paddingLeft="10dp"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/COLOR_6B6B6B"/>
+                <ListView
+                    android:id="@+id/scan_device"
+                    android:layout_width="match_parent"
+                    android:paddingRight="12dp"
+                    android:paddingLeft="12dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="7"/>
+
+            </LinearLayout>
+        </RelativeLayout>
+        <LinearLayout
+            android:id="@+id/frag_ble_connect_left_after"
+            android:visibility="gone"
+            android:layout_centerHorizontal="true"
+            android:padding="10dp"
+            android:gravity="center"
+            android:layout_above="@id/frag_ble_left_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/img_device"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <!-- 오른쪽 Layout -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="16dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/frag_ble_connect_right_before"
+            android:visibility="visible"
+            android:layout_margin="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/bluetooth_connect_info"
+                android:textSize="15dp"
+                android:textColor="@color/white"
+                android:paddingLeft="10dp"/>
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1) "
+                    android:textSize="12.5dp"
+                    android:textColor="@color/COLOR_6B6B6B"
+                    android:paddingLeft="10dp"/>
+                <ImageView
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="83dp"
+                    android:layout_height="26dp"
+                    android:background="@drawable/button_bluetooth_off"/>
+                <TextView
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bluetooth_connect_info_1"
+                    android:textSize="12.5dp"
+                    android:textColor="@color/COLOR_6B6B6B"
+                    android:paddingLeft="10dp"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="2)"
+                    android:textSize="12.5dp"
+                    android:textColor="@color/COLOR_6B6B6B"
+                    android:paddingLeft="10dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bluetooth_connect_info_2"
+                    android:textSize="12.5dp"
+                    android:textColor="@color/COLOR_6B6B6B"
+                    android:paddingLeft="10dp"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="3)"
+                    android:textSize="12.5dp"
+                    android:textColor="@color/COLOR_6B6B6B"
+                    android:paddingLeft="10dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bluetooth_connect_info_3"
+                    android:textSize="12.5dp"
+                    android:textColor="@color/COLOR_6B6B6B"
+                    android:paddingLeft="10dp"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_marginTop="60dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/bluetooth_not_connect"
+                android:textSize="13dp"
+                android:textColor="@color/white"
+                android:paddingLeft="10dp"/>
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/bluetooth_not_connect_1"
+                android:textSize="12.5dp"
+                android:textColor="@color/COLOR_6B6B6B"
+                android:paddingLeft="10dp"/>
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/bluetooth_not_connect_2"
+                android:textSize="12.5dp"
+                android:textColor="@color/COLOR_6B6B6B"
+                android:paddingLeft="10dp"/>
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="35dp"
+                android:background="@color/COLOR_6B6B6B"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    style="@style/txt_style_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/roasring_count"
+                    android:textColor="@color/COLOR_6B6B6B"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/frag_ble_connect_right_roasting_count"
+                    style="@style/txt_style_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="325"
+                    android:textColor="@color/COLOR_F5F5F5"
+                    android:textSize="15dp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/frag_ble_connect_right_after"
+            android:visibility="gone"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageButton
+                    android:id="@+id/btn_tutorial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_tutorial"
+                    android:layout_alignParentRight="true"
+                    android:onClick="onClick"/>
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/legato_logo"/>
+
+            <TextView
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"
+                style="@style/txt_style_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="normal"
+                android:textSize="12.5dp"
+                android:lineSpacingExtra="3dp"
+                android:textColor="@color/COLOR_6B6B6B"
+                android:text="@string/ble_connect_text"/>
+            <ImageButton
+                android:id="@+id/bluetooth_btn_tutorial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/btn_tip"/>
+
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginBottom="35dp"
+                android:background="@color/COLOR_6B6B6B"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    style="@style/txt_style_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/roasring_count"
+                    android:textColor="@color/COLOR_6B6B6B"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/frag_ble_connect_right_roasting_count_2"
+                    style="@style/txt_style_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/COLOR_F5F5F5"
+                    android:textSize="15dp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

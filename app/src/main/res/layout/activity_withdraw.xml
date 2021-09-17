@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/black">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/RGB_202020"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="110dp">
+
+        <ImageButton
+            android:id="@+id/withdraw_btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_back"
+            android:onClick="onClick"/>
+
+        <TextView
+            android:id="@+id/main_title"
+            android:layout_marginLeft="5dp"
+            style="@style/txt_style_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="normal"
+            android:textSize="18dp"
+            android:textColor="#b4b4b4"
+            android:text="@string/with_draw"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="70dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/withdraw_name"
+                style="@style/txt_style_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/COLOR_B4B4B4"
+                android:textSize="25dp"/>
+
+            <TextView
+                style="@style/txt_style_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/withdraw_nim"
+                android:textColor="@color/COLOR_B4B4B4"
+                android:textSize="25dp"/>
+
+        </LinearLayout>
+
+
+
+        <TextView
+            style="@style/txt_style_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/withdraw_explain_text"
+            android:textColor="@color/COLOR_6B6B6B"
+            android:textSize="15dp"
+            android:textStyle="normal" />
+
+        <Button
+            android:id="@+id/withdraw_btn_ok"
+            android:onClick="onClick"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/sel_btn_base_red"
+            android:text="@string/withdraw_btn_delete"
+            android:textColor="@drawable/sel_btn_base_red" />
+        <Button
+            android:id="@+id/withdraw_btn_cancel"
+            android:onClick="onClick"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/sel_btn_base_gray"
+            android:text="@string/btn_cancel"
+            android:textColor="@drawable/sel_btn_base_gray" />
+    </LinearLayout>
+</LinearLayout>

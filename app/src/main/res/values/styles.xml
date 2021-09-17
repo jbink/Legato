@@ -1,0 +1,59 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="txt_style_medium">
+        <item name="android:fontFamily">@font/notosanscjkkr_medium</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="txt_tab_style">
+        <item name="android:fontFamily">@font/notosanscjkkr_medium</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textColor">@color/COLOR_3B3B3B</item>
+        <item name="android:textSize">12.5dp</item>
+    </style>
+    <style name="txt_tab_prs_style">
+        <item name="android:fontFamily">@font/notosanscjkkr_medium</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textColor">@color/COLOR_6B6B6B</item>
+        <item name="android:textSize">12.5dp</item>
+    </style>
+
+    <style name="edt_style_bold" parent="txt_style_medium">
+        <item name="android:textStyle">bold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:paddingLeft">22dp</item>
+        <item name="android:paddingRight">22dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColorHint">@color/COLOR_DDDDDD</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar.Transparent">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+
+</resources>

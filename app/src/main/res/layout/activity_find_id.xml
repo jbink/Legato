@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/RGB_202020"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="110dp">
+
+        <ImageButton
+            android:id="@+id/findid_btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_back"
+            android:onClick="onClick"/>
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            style="@style/txt_style_medium"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:textColor="@color/COLOR_B4B4B4"
+            android:text="@string/find_id"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="70dp"
+        android:paddingRight="70dp"
+        android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:id="@+id/findid_edt_id"
+            android:maxLines="1"
+            android:inputType="textEmailAddress"
+            android:imeOptions="actionDone"
+            android:background="@null"
+            android:paddingLeft="5dp"
+            android:layout_centerVertical="true"
+            style="@style/txt_style_medium"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/COLOR_B4B4B4"
+            android:hint="@string/phone_number"/>
+
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/COLOR_202020"/>
+
+    <Button
+        android:onClick="onClick"
+        android:layout_marginTop="30dp"
+        android:id="@+id/findid_btn_ok"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:text="@string/find"
+        android:background="@drawable/sel_btn_base"/>
+    </LinearLayout>
+
+</LinearLayout>

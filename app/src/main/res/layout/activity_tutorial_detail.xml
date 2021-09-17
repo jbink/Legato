@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="60dp"
+    android:paddingRight="60dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black">
+
+    <com.smarteist.autoimageslider.SliderView
+        android:id="@+id/store_detail_banner_slider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:sliderAutoCycleEnabled="false"
+        app:sliderIndicatorAnimationDuration="600"
+        app:sliderIndicatorGravity="left|bottom"
+        app:sliderIndicatorMargin="20dp"
+        app:sliderIndicatorOrientation="horizontal"
+        app:sliderIndicatorPadding="2dp"
+        app:sliderIndicatorRadius="2dp"
+        app:sliderIndicatorSelectedColor="@color/COLOR_RED"
+        app:sliderIndicatorUnselectedColor="@color/COLOR_3B3B3B" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+        <ImageButton
+            android:layout_margin="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tutorial_btn_skip"
+            android:layout_alignParentRight="true"
+            android:onClick="onClick"
+            android:background="@drawable/btn_skip"/>
+    </RelativeLayout>
+    <ImageButton
+        android:visibility="gone"
+        android:layout_margin="30dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/tutorial_btn_close"
+        android:layout_alignParentRight="true"
+        android:background="@android:color/transparent"
+        android:onClick="onClick"/>
+
+</RelativeLayout>

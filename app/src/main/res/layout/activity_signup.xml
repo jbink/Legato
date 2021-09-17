@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/black"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/RGB_202020"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="110dp">
+
+        <ImageButton
+            android:id="@+id/signup_btn_back_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_back"
+            android:onClick="onClick"/>
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            style="@style/txt_style_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="normal"
+            android:textSize="15dp"
+            android:textColor="#b4b4b4"
+            android:text="@string/signup"/>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_gravity="center_horizontal"
+            android:layout_width="450dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="30dp">
+
+            <TextView
+                android:layout_marginTop="30dp"
+                style="@style/txt_style_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25dp"
+                android:textColor="@color/COLOR_F5F5F5"
+                android:text="@string/signup_create_account"/>
+
+            <RelativeLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:imeOptions="actionNext"
+                    android:id="@+id/signup_edt_email"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:layout_toLeftOf="@id/signup_btn_send_authcode"
+                    android:paddingLeft="5dp"
+                    android:layout_centerVertical="true"
+                    style="@style/txt_style_medium"
+                    android:textSize="15dp"
+                    android:textColor="@color/COLOR_6B6B6B"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:textColorHint="@color/COLOR_6B6B6B"
+                    android:hint="@string/email"/>
+
+                <ImageButton
+                    android:id="@+id/signup_btn_send_authcode"
+                    android:onClick="onClick"
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/sel_btn_send_auth_code"/>
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/COLOR_202020"/>
+
+            <TextView
+                android:id="@+id/signup_tv_send_authcode"
+                android:visibility="visible"
+                style="@style/txt_style_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:textColor="@color/COLOR_RED"
+                android:text=""/>
+
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:imeOptions="actionNext"
+                    android:id="@+id/signup_edt_authcode"
+                    android:paddingLeft="5dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/signup_btn_confirm_authcode"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    style="@style/txt_style_medium"
+                    android:textSize="15dp"
+                    android:textColor="@color/COLOR_6B6B6B"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:textColorHint="@color/COLOR_6B6B6B"
+                    android:hint="@string/signup_auth_num"/>
+
+                <ImageButton
+                    android:id="@+id/signup_btn_confirm_authcode"
+                    android:onClick="onClick"
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/sel_btn_auth_confirm"/>
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/COLOR_202020"/>
+
+            <TextView
+                android:id="@+id/signup_tv_confirm_authcode"
+                android:visibility="visible"
+                style="@style/txt_style_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:textColor="@color/COLOR_RED"/>
+
+            <LinearLayout
+                android:id="@+id/signup_lay_info"
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="60dp">
+
+                    <EditText
+                        android:imeOptions="actionNext"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:id="@+id/signup_edt_pw"
+                        style="@style/txt_style_medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:hint="@string/password"
+                        android:paddingLeft="5dp"
+                        android:textColor="@color/COLOR_6B6B6B"
+                        android:textColorHint="@color/COLOR_6B6B6B"
+                        android:textSize="15dp" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/COLOR_202020"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:maxLines="1"
+                        android:inputType="text"
+                        android:imeOptions="actionNext"
+                        android:id="@+id/signup_edt_name"
+                        style="@style/txt_style_medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:hint="@string/name"
+                        android:paddingLeft="5dp"
+                        android:textColor="@color/COLOR_6B6B6B"
+                        android:textColorHint="@color/COLOR_6B6B6B"
+                        android:textSize="15dp" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/COLOR_202020"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/signup_edt_birth"
+                        style="@style/txt_style_medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:hint="@string/birth_exam"
+                        android:paddingLeft="5dp"
+                        android:textColor="@color/COLOR_6B6B6B"
+                        android:textColorHint="@color/COLOR_6B6B6B"
+                        android:textSize="15dp" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/COLOR_202020"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:imeOptions="actionNext"
+                        android:id="@+id/signup_edt_phone"
+                        style="@style/txt_style_medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:hint="@string/phone_number"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:paddingLeft="5dp"
+                        android:textColor="@color/COLOR_6B6B6B"
+                        android:textColorHint="@color/COLOR_6B6B6B"
+                        android:textSize="15dp" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/COLOR_202020"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:id="@+id/signup_edt_address"
+                        style="@style/txt_style_medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:hint="@string/address"
+                        android:paddingLeft="5dp"
+                        android:textColor="@color/COLOR_6B6B6B"
+                        android:textColorHint="@color/COLOR_6B6B6B"
+                        android:textSize="15dp" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/COLOR_202020"/>
+
+                <!-- 이용약관 부분 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/signup_lay_clause"
+                    android:visibility="visible"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/txt_style_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:textColor="@color/COLOR_F5F5F5"
+                        android:text="이용약관"/>
+
+                    <LinearLayout
+                        android:layout_marginTop="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <CheckBox
+                            android:id="@+id/signup_chk_all"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/sel_btn_radio"
+                            android:onClick="onClick"
+                            android:button="@null"/>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="normal"
+                                android:layout_gravity="center_vertical"
+                                android:textSize="12.5dp"
+                                android:textColor="@color/COLOR_B4B4B4"
+                                android:text="모두 동의합니다"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="normal"
+                                android:textSize="10dp"
+                                android:layout_marginTop="3dp"
+                                android:textColor="@color/COLOR_6B6B6B"
+                                android:text="전체동의는 필수 및 선택정보에 대한 동의도 포함되어 있으며, 개별적으로도 동의를 선택할 수 있습니다. 선택항목에 대한 동의를 거부하는 경우에도 서비스 이용이 가능합니다."/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/COLOR_202020"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/signup_chk_0"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/sel_btn_radio"
+                                android:button="@null"
+                                android:onClick="onClick"/>
+
+                            <TextView
+                                style="@style/txt_style_medium"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="12.5dp"
+                                android:textColor="@color/COLOR_6B6B6B"
+                                android:text="만 14세 이상입니다"
+                                android:layout_marginLeft="10dp"/>
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/signup_btn_0"
+                            android:onClick="onClick"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/list_icon_arrow"/>
+
+                    </RelativeLayout>
+                    <ImageView
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/COLOR_202020"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/signup_chk_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/sel_btn_radio"
+                                android:button="@null"
+                                android:onClick="onClick"/>
+
+                            <TextView
+                                style="@style/txt_style_medium"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="12.5dp"
+                                android:textColor="@color/COLOR_6B6B6B"
+                                android:text="[필수] 레가토계정 약관"
+                                android:layout_marginLeft="10dp"/>
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/signup_btn_1"
+                            android:onClick="onClick"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/list_icon_arrow"/>
+
+                    </RelativeLayout>
+                    <ImageView
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/COLOR_202020"/>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/signup_chk_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/sel_btn_radio"
+                                android:button="@null"
+                                android:onClick="onClick"/>
+
+                            <TextView
+                                style="@style/txt_style_medium"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="12.5dp"
+                                android:textColor="@color/COLOR_6B6B6B"
+                                android:text="[필수] 레가토 통합서비스 약관"
+                                android:layout_marginLeft="10dp"/>
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/signup_btn_2"
+                            android:onClick="onClick"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/list_icon_arrow"/>
+
+                    </RelativeLayout>
+                    <ImageView
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/COLOR_202020"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/signup_chk_3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/sel_btn_radio"
+                                android:button="@null"
+                                android:onClick="onClick"/>
+
+                            <TextView
+                                style="@style/txt_style_medium"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="12.5dp"
+                                android:textColor="@color/COLOR_6B6B6B"
+                                android:text="[선택] 레가토알림 채널 추가 및 광고메시지 수신"
+                                android:layout_marginLeft="10dp"/>
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/list_icon_arrow"/>
+
+                    </RelativeLayout>
+                    <ImageView
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/COLOR_202020"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/signup_chk_4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/sel_btn_radio"
+                                android:button="@null"
+                                android:onClick="onClick"/>
+
+                            <TextView
+                                style="@style/txt_style_medium"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="12.5dp"
+                                android:textColor="@color/COLOR_6B6B6B"
+                                android:text="[필수] 개인정보 수집 및 이용 동의"
+                                android:layout_marginLeft="10dp"/>
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/list_icon_arrow"/>
+
+                    </RelativeLayout>
+                    <ImageView
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/COLOR_202020"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/signup_chk_5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/sel_btn_radio"
+                                android:button="@null"
+                                android:onClick="onClick"/>
+
+                            <TextView
+                                style="@style/txt_style_medium"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="12.5dp"
+                                android:textColor="@color/COLOR_6B6B6B"
+                                android:text="[선택] 위치정보 수집 및 이용동의"
+                                android:layout_marginLeft="10dp"/>
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/list_icon_arrow"/>
+
+                    </RelativeLayout>
+                    <ImageView
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/COLOR_202020"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/signup_chk_6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/sel_btn_radio"
+                                android:button="@null"
+                                android:onClick="onClick"/>
+
+                            <TextView
+                                style="@style/txt_style_medium"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="12.5dp"
+                                android:textColor="@color/COLOR_6B6B6B"
+                                android:text="[필수] 품질 개선을 위한 프로파일 정보수집 동의"
+                                android:layout_marginLeft="10dp"/>
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/list_icon_arrow"/>
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <!-- END : 이용약관 부분 -->
+
+                <Button
+                    android:onClick="onClick"
+                    android:layout_marginTop="30dp"
+                    android:id="@+id/signup_btn_ok"
+                    android:layout_width="match_parent"
+                    android:layout_height="53dp"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"
+                    android:text="@string/complete"
+                    android:background="@drawable/sel_btn_base"/>
+
+                <TextView
+                    android:id="@+id/signup_btn_back"
+                    android:onClick="onClick"
+                    style="@style/txt_style_medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textSize="15dp"
+                    android:textColor="#3b3b3b"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="@string/signup_back"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>

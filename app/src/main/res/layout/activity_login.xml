@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/black"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_gravity="center_horizontal"
+            android:layout_width="450dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="30dp">
+
+            <ImageView
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="40dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="@drawable/legato_logo"/>
+
+            <RelativeLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:id="@+id/login_edt_id"
+                    android:background="@null"
+                    android:paddingLeft="5dp"
+                    android:layout_centerVertical="true"
+                    style="@style/txt_style_medium"
+                    android:textSize="15dp"
+                    android:maxLines="1"
+                    android:inputType="textEmailAddress"
+                    android:imeOptions="actionNext"
+                    android:textColor="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/white"
+                    android:hint="Email"/>
+
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/COLOR_202020"/>
+
+            <TextView
+                android:id="@+id/login_btn_find_id"
+                android:onClick="onClick"
+                android:layout_marginLeft="5dp"
+                style="@style/txt_style_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:textColor="@color/COLOR_6B6B6B"
+                android:text="@string/find_id"/>
+
+            <RelativeLayout
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:layout_toLeftOf="@id/login_pw_view"
+                    android:id="@+id/login_edt_pw"
+                    android:paddingLeft="5dp"
+                    android:layout_centerVertical="true"
+                    style="@style/txt_style_medium"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:imeOptions="actionDone"
+                    android:textSize="15dp"
+                    android:textColor="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:textColorHint="@color/white"
+                    android:hint="@string/password"/>
+
+                <ImageButton
+                    android:id="@+id/login_pw_view"
+                    android:onClick="onClick"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/icon_pw_view_off" />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/COLOR_202020"/>
+
+            <TextView
+                android:id="@+id/login_btn_find_pw"
+                android:onClick="onClick"
+                android:layout_marginLeft="5dp"
+                style="@style/txt_style_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:textColor="@color/COLOR_6B6B6B"
+                android:text="@string/find_pw"/>
+
+
+
+            <Button
+                android:onClick="onClick"
+                android:layout_marginTop="30dp"
+                android:id="@+id/login_btn_ok"
+                android:layout_width="match_parent"
+                android:layout_height="53dp"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:text="@string/login"
+                android:background="@drawable/sel_btn_base"/>
+
+            <TextView
+                android:layout_marginTop="30dp"
+                android:layout_gravity="right"
+                android:id="@+id/login_btn_signup"
+                android:onClick="onClick"
+                android:layout_marginLeft="5dp"
+                style="@style/txt_style_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:textColor="@color/COLOR_F1F1F1"
+                android:text="@string/signup"/>
+
+
+        </LinearLayout>
+
+
+
+</LinearLayout>

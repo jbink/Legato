@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_pressed="false"
+        android:drawable="@drawable/btn_base_back"
+        android:color="@color/COLOR_6B6B6B"/>
+    <item android:state_pressed="true"
+        android:drawable="@drawable/btn_base_back_6b"
+        android:color="@color/white"/>
+</selector>

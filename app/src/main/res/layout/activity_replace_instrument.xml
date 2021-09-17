@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/RGB_202020"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="110dp">
+
+        <ImageButton
+            android:id="@+id/replace_instrument_btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_back"
+            android:onClick="onClick"/>
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            style="@style/txt_style_medium"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:textColor="@color/COLOR_B4B4B4"
+            android:text="@string/device_setting"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="70dp"
+        android:paddingRight="70dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/replace_instrument_id"
+            android:layout_marginTop="100dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:paddingLeft="5dp"
+            android:layout_centerVertical="true"
+            style="@style/txt_style_medium"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MyRoaster ID"
+            android:textColor="@color/white"/>
+
+
+
+        <RelativeLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:id="@+id/replace_instrument_address"
+                android:paddingLeft="5dp"
+                android:layout_centerVertical="true"
+                style="@style/txt_style_medium"
+                android:textSize="15dp"
+                android:textColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/white"/>
+
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/COLOR_202020"/>
+
+        <TextView
+            android:layout_marginTop="3dp"
+            android:paddingBottom="2dp"
+            android:paddingLeft="5dp"
+            style="@style/txt_style_medium"
+            android:textSize="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/disconnect_roaster"
+            android:textColor="@color/COLOR_999999"/>
+
+        <Button
+            android:onClick="onClick"
+            android:layout_marginTop="30dp"
+            android:id="@+id/replace_instrument_delete"
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:text="@string/delete"
+            android:background="@drawable/sel_btn_base"/>
+    </LinearLayout>
+
+</LinearLayout>

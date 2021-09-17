@@ -1,0 +1,174 @@
+<resources>
+    <string name="app_name">Legato</string>
+    <string name="app_finish">Are you sure you want to exit the Legato?</string>
+
+    <!-- 커피 -->
+    <string name="profile_library">Profile Library</string>
+    <string name="qr_code">QR Code</string>
+    <string name="BASIC">BASIC</string>
+    <string name="PRO">PRO</string>
+    <string name="QR">QR</string>
+    <string name="SELECT">SELECT</string>
+    <string name="new_profile">Create new profile</string>
+    <string name="pair_device">Registered device</string>
+    <string name="connect_device">Device available for connection</string>
+    <string name="short_time">SHORT TIME</string>
+    <string name="roast_history">ROAST_HISTORY</string>
+    <string name="fan">FAN</string>
+    <string name="main">MAIN</string>
+    <string name="my_page">MY PAGE</string>
+    <string name="signup">Signup</string>
+    <string name="make_profile">Create profile</string>
+    <string name="with_draw">Delete account</string>
+    <string name="delete">Delete</string>
+    <string name="login">LOGIN</string>
+    <string name="logout">LOGOUT</string>
+    <string name="msg_logout">Cannot use Legato roaster unless you log in again.</string>
+    <string name="start">Start</string>
+    <string name="forced_termination">Forced termination</string>
+    <string name="reset_temperature">Fire Power Reset</string>
+    <string name="a"></string>
+
+
+    <string name="dlg_common_error_msg">An error has occurred.\nPlease try again in a few minutes.</string>
+
+    <string name="find_id">Find ID</string>
+    <string name="find_pw">Find Password</string>
+    <string name="find">FIND</string>
+    <string name="phone_number">Mobile Number</string>
+    <string name="password">Password</string>
+    <string name="section_set_temperature">Temperature setting per section</string>
+    <string name="section_set_temperature_txt">The higher the heat, the faster the temperature increase of the section. The lower the heat, the slower the temperature increase.</string>
+    <string name="goal_temperature">Target temperature</string>
+    <string name="goal_temperature_txt">Highest temperature to reach. If the temperature is high, the roast intensity is high. If the temperature is low, the roast intensity is low.</string>
+    <string name="temperature_point">Temperature point</string>
+    <string name="section_level">level</string>
+    <string name="roasting_power">Roasting result</string>
+    <string name="exhaust">배출</string>
+    <string name="input_temperature">0 ~ 130℃</string>
+    <string name="profile_info">Profile information</string>
+    <string name="profile_name">Profile name</string>
+    <string name="input_value">Amount of input</string>
+    <string name="coffee_name">Green bean name</string>
+    <string name="coffee_description">Note</string>
+    <string name="profile_save">Profile save</string>
+    <string name="predict_roastind_time">Expected time to \nfinish roasting</string>
+    <string name="predict_roastind_time_txt">The finish time can vary by the input amount.</string>
+    <string name="email">E-mail</string>
+    <string name="tutorial">Tutorial</string>
+    <string name="send_authcode_txt">An email has been sent to confirm your registration.</string>
+    <string name="change_password">Change Password.</string>
+    <string name="personal_info">Change Personal Infomation</string>
+    <string name="member_info">Member Information</string>
+    <string name="current_pw">Current Password</string>
+    <string name="new_pw">New Password</string>
+    <string name="new_pw_confirm">New Password Confirm</string>
+    <string name="btn_replace_pw">Modify Password</string>
+    <string name="btn_finish">Finish</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="btn_ok">OK</string>
+    <string name="profile_delete_txt">Are you sure you want to delete Profile information?</string>
+    <string name="instrument_delete_txt">Are you sure you want to delete Roaster ID?</string>
+    <string name="device_setting">Device Setting</string>
+    <string name="app_version">Version</string>
+    <string name="change_info_part">Information on when to replace parts</string>
+    <string name="change_fahrenheit">Change to Fahrenheit</string>
+    <string name="default_celsius">Default Celsius</string>
+    <string name="guide_replacement_info">Guide the replacement cycle of consumable parts</string>
+    <string name="language_setting">Language Setting</string>
+    <string name="language_kr">Korean</string>
+    <string name="language_en">English</string>
+    <string name="personal_info_modify">Personal Info</string>
+    <string name="replace_instrument">Replace Instrument</string>
+    <string name="warn_set_language">If you change language settings, restart the app.</string>
+    <string name="disconnect_roaster">To connect a new device, you must delete the existing device.</string>
+    <string name="do_not_save">Do Not Save.</string>
+    <string name="save">Save</string>
+    <string name="save_data_name">Sample Name</string>
+    <string name="qr_profile_success">The profile has been added.</string>
+    <string name="qr_profile_duplicate">Profile already added.</string>
+    <string name="qr_profile_empty">There is no registered Profile.</string>
+    <string name="fan_on_text">Cooling mode will run for 3 minutes.\nIf you want to end it, press the fan button one more time.</string>
+    <string name="roasring_count">Total roasting rounds</string>
+    <string name="roasring_force_finish">Do you want to force termination of roasting?</string>
+    <string name="roasring_not_allow">Roasting cannot be carried out during Fan operation.</string>
+    <string name="roasring_not_allow_5_times">You can not be placed more than five times in a row. To escape the heat of a roaster, please.</string>
+    <string name="roasring_not_allow_ing">You cannot pan the screen during roasting.</string>
+    <string name="bluetooth_scoket_closed">Bluetooth connection is disabled. Please put me through again.</string>
+    <string name="confirm_withdraw">Would you like to proceed with the withdrawal of membership?</string>
+    <string name="temperature_resetting">Temperature has been reset.</string>
+    <string name="complete">Complete</string>
+    <string name="name">Name</string>
+    <string name="birth_exam">birthday ex)880101</string>
+    <string name="address">Address</string>
+    <string name="start_roasting">Start roasting</string>
+
+    <!-- QR -->
+    <string name="qr_text">Place the QR code in the center.</string>
+
+    <!-- 설정 -->
+    <string name="setting_hello">Hello, </string>
+    <string name="setting_buy_bean">Purchase green beans</string>
+    <string name="setting_member_infomation">Member information</string>
+    <string name="setting_customer_support">Customer support</string>
+    <string name="setting_device_setup">Device setup</string>
+    <string name="setting_privacy_policy">Privacy policy</string>
+    <string name="setting_terms_conditions">Terms and Conditions</string>
+    <string name="setting_user_manual">User manual</string>
+    <string name="setting_delete_account">Delete account</string>
+    <string name="ble_connect_text">Make a special coffee with Legato.\n
+You can adjust the specific temperature, time, and heating power within the section you want during roasting, thus creating your own profile. \nYou can also record information about green beans, coffee beans, and cupping (including ROR and DTR).</string>
+
+    <!-- 블루투스 연결 -->
+    <string name="bluetooth_connect_info">How to Connect to Bluetooth</string>
+    <string name="bluetooth_connect_info_1">Push the Bluetooth button.</string>
+    <string name="bluetooth_connect_info_2">In the menu, find LEGATO.</string>
+    <string name="bluetooth_connect_info_3">Press OK after selecting it.</string>
+    <string name="bluetooth_not_connect">If you have a connection issue</string>
+    <string name="bluetooth_not_connect_1">- See if the roaster is powered on.</string>
+    <string name="bluetooth_not_connect_2">- Try again within 60 cm range from the roaster.</string>
+    <string name="bluetooth_no_device">No device is connected.</string>
+    <string name="bluetooth_change_screen">You cannot switch screens during Roasting.</string>
+    <string name="no_paired_device">No paired device found.</string>
+    <string name="bluetooth_disabled">Bluetooth is disabled.</string>
+
+    <!-- 계정삭제 -->
+    <string name="withdraw_nim"></string>
+    <string name="withdraw_explain_text">Hope to see you soon.\n\n
+If you delete your account, all personal and profile information will be lost and you can no longer access Legato or receive benefits.\n
+Deleting your account does not remove the information stored in the app (e.g. use history, postal code) though. \n
+Purchase history is retained for the purpose of tax filing and other legal reasons.</string>
+    <string name="withdraw_btn_delete">Delete account</string>
+
+    <!-- 회원가입 -->
+    <string name="signup_create_account">Create account</string>
+    <string name="signup_auth_num">Verification number </string>
+    <string name="signup_auth_num_send">Send verification number</string>
+    <string name="signup_back">Back to Main Page</string>
+
+    <!-- 개인정보 -->
+    <string name="personal_information">Personal Information</string>
+    <string name="personal_birth">Date of birth</string>
+
+    <!--Toast Message -->
+    <string name="toast_input_phone_number">Please enter your phone number.</string>
+    <string name="toast_input_email">Please enter your E-mail.</string>
+    <string name="toast_input_name">Please enter your Name.</string>
+    <string name="toast_input_pw">Please enter your Password.</string>
+    <string name="toast_input_authcode">Please enter your Auth Code.</string>
+    <string name="toast_input_wrong_email">The email format is not valid.</string>
+    <string name="toast_authcode_success">Authentication succeeded.</string>
+    <string name="toast_authcode_fail">Authentication failed.</string>
+    <string name="password_not_equal">Passwords do not match.</string>
+    <string name="password_change_success">Your password has been successfully changed.</string>
+    <string name="save_success">Saving succeeded.</string>
+    <string name="file_not_exist">File path is invalid.</string>
+    <string name="select_max_5">You can select up to five.</string>
+    <string name="permission_require">Requires permission</string>
+    <string name="save_data_success">Check out roasting information on the History page.</string>
+
+
+    <!-- 부품교체 -->
+    <string name="change_part_text">Please take an inspection from JFUN Co., Ltd.\nso that you can use the product for a long time.</string>
+    <!-- new -->
+</resources>

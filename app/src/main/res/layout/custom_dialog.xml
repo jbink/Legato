@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#a0000000"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_radius"
+        android:orientation="vertical">
+
+        <!-- 내용 -->
+
+        <RelativeLayout
+            android:minHeight="130dp"
+            android:id="@+id/custom_layout_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:id="@+id/dlg_tv_content"
+                style="@style/txt_style_medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="30dp"
+                android:gravity="center"
+                android:maxLines="10"
+                android:textColor="@color/COLOR_6B6B6B"
+                android:textSize="15dp" />
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/COLOR_6B6B6B"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:weightSum="2"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:padding="15dp"
+                android:id="@+id/dlg_lay_left"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/dlg_btn_left"
+                    style="@style/txt_style_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:textColor="@color/COLOR_6B6B6B"
+                    android:textSize="15dp" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/dlg_btn_divide"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/COLOR_6B6B6B"/>
+
+            <RelativeLayout
+                android:padding="15dp"
+                android:id="@+id/dlg_lay_right"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/dlg_btn_right"
+                    style="@style/txt_style_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:textColor="@color/COLOR_RED"
+                    android:textSize="15dp" />
+            </RelativeLayout>
+
+            <!-- 아래 버튼 -->
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

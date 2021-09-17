@@ -1,0 +1,704 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:weightSum="2"
+    android:paddingRight="30dp"
+    android:paddingTop="30dp"
+    android:paddingLeft="30dp"
+    android:background="@color/black">
+
+    <!-- 왼쪽 Layout -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="16dp"
+        android:layout_weight="1.1"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/txt_style_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:text="@string/goal_temperature"/>
+
+        <TextView
+            style="@style/txt_style_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="11.5dp"
+            android:textColor="@color/COLOR_6B6B6B"
+            android:text="@string/goal_temperature_txt"
+            android:layout_marginTop="5dp"/>
+
+        <LinearLayout
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/rectangle_solid_141414"
+            android:padding="3dp"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <TextView
+                style="@style/txt_style_medium"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="1"
+                android:textSize="10.5dp"
+                android:textColor="@color/COLOR_6B6B6B"/>
+            <TextView
+                style="@style/txt_style_medium"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="4"
+                android:text="198℃ ~ 205℃"
+                android:textSize="10.5dp"
+                android:textColor="@color/COLOR_6B6B6B"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/sel_btn_minus"
+                android:textColor="@color/COLOR_6B6B6B"/>
+            <TextView
+                style="@style/txt_style_medium"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="3"
+                android:text="198"
+                android:textSize="10.5dp"
+                android:textColor="@color/COLOR_6B6B6B"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/sel_btn_plus"
+                android:textColor="@color/COLOR_6B6B6B"/>
+
+        </LinearLayout>
+
+
+        <!-- 구간별 온도 설정 -->
+        <TextView
+            style="@style/txt_style_medium"
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:text="@string/section_set_temperature"/>
+
+        <TextView
+            style="@style/txt_style_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="11.5dp"
+            android:textColor="@color/COLOR_6B6B6B"
+            android:text="@string/section_set_temperature_txt"
+            android:layout_marginTop="5dp"/>
+
+        <LinearLayout
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/rectangle_solid_202020"
+            android:padding="3dp"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <TextView
+                style="@style/txt_style_medium"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="@string/section_level"
+                android:textSize="10.5dp"
+                android:textColor="@color/COLOR_6B6B6B"/>
+            <TextView
+                style="@style/txt_style_medium"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="4"
+                android:text="@string/temperature_point"
+                android:textSize="10.5dp"
+                android:textColor="@color/COLOR_6B6B6B"/>
+
+            <TextView
+                android:visibility="invisible"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/sel_btn_minus"
+                android:textColor="@color/COLOR_6B6B6B"/>
+            <TextView
+                style="@style/txt_style_medium"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="3"
+                android:text="@string/temperature_resetting"
+                android:textSize="10.5dp"
+                android:textColor="@color/COLOR_6B6B6B"/>
+            <TextView
+                android:visibility="invisible"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/sel_btn_plus"
+                android:textColor="@color/COLOR_6B6B6B"/>
+
+        </LinearLayout>
+
+        <!-- 1 단계 -->
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/rectangle_solid_141414"
+            android:padding="3dp"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <TextView
+                style="@style/txt_style_medium"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="1"
+                android:textSize="10.5dp"
+                android:textColor="@color/COLOR_6B6B6B"/>
+            <TextView
+                style="@style/txt_style_medium"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="4"
+                android:text="@string/input_temperature"
+                android:textSize="10.5dp"
+                android:textColor="@color/COLOR_B4B4B4"/>
+
+            <TextView
+                android:id="@+id/frag_make_profile_0_btn_minus"
+                android:onClick="onClick"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/sel_btn_minus"/>
+            <TextView
+                android:id="@+id/frag_make_profile_0_txt_value"
+                style="@style/txt_style_medium"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="3"
+                android:text="55%"
+                android:textSize="10.5dp"
+                android:textColor="@color/COLOR_B4B4B4"/>
+            <TextView
+                android:id="@+id/frag_make_profile_0_btn_plus"
+                android:onClick="onClick"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/sel_btn_plus"/>
+
+        </LinearLayout>
+        <!-- 2 단계 -->
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/rectangle_solid_141414"
+            android:padding="3dp"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <TextView
+                style="@style/txt_style_medium"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="2"
+                android:textSize="10.5dp"
+                android:textColor="@color/COLOR_6B6B6B"/>
+            <TextView
+                style="@style/txt_style_medium"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="4"
+                android:text="130℃ ~ 150℃"
+                android:textSize="10.5dp"
+                android:textColor="@color/COLOR_B4B4B4"/>
+
+            <TextView
+                android:id="@+id/frag_make_profile_1_btn_minus"
+                android:onClick="onClick"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/sel_btn_minus"/>
+            <TextView
+                android:id="@+id/frag_make_profile_1_txt_value"
+                style="@style/txt_style_medium"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="3"
+                android:text="55%"
+                android:textSize="10.5dp"
+                android:textColor="@color/COLOR_B4B4B4"/>
+            <TextView
+                android:id="@+id/frag_make_profile_1_btn_plus"
+                android:onClick="onClick"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/sel_btn_plus"/>
+
+        </LinearLayout>
+        <!-- 3 단계 -->
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/rectangle_solid_141414"
+            android:padding="3dp"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <TextView
+                style="@style/txt_style_medium"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="3"
+                android:textSize="10.5dp"
+                android:textColor="@color/COLOR_6B6B6B"/>
+            <TextView
+                style="@style/txt_style_medium"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="4"
+                android:text="150℃ ~ 170℃"
+                android:textSize="10.5dp"
+                android:textColor="@color/COLOR_B4B4B4"/>
+
+            <TextView
+                android:id="@+id/frag_make_profile_2_btn_minus"
+                android:onClick="onClick"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/sel_btn_minus"/>
+            <TextView
+                android:id="@+id/frag_make_profile_2_txt_value"
+                style="@style/txt_style_medium"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="3"
+                android:text="55%"
+                android:textSize="10.5dp"
+                android:textColor="@color/COLOR_B4B4B4"/>
+            <TextView
+                android:id="@+id/frag_make_profile_2_btn_plus"
+                android:onClick="onClick"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/sel_btn_plus"/>
+
+        </LinearLayout>
+        <!-- 4 단계 -->
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/rectangle_solid_141414"
+            android:padding="3dp"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <TextView
+                style="@style/txt_style_medium"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="4"
+                android:textSize="10.5dp"
+                android:textColor="@color/COLOR_6B6B6B"/>
+            <TextView
+                style="@style/txt_style_medium"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="4"
+                android:text="170℃ ~ 190℃"
+                android:textSize="10.5dp"
+                android:textColor="@color/COLOR_B4B4B4"/>
+
+            <TextView
+                android:id="@+id/frag_make_profile_3_btn_minus"
+                android:onClick="onClick"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/sel_btn_minus"/>
+            <TextView
+                android:id="@+id/frag_make_profile_3_txt_value"
+                style="@style/txt_style_medium"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="3"
+                android:text="55%"
+                android:textSize="10.5dp"
+                android:textColor="@color/COLOR_B4B4B4"/>
+            <TextView
+                android:id="@+id/frag_make_profile_3_btn_plus"
+                android:onClick="onClick"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/sel_btn_plus"/>
+
+        </LinearLayout>
+        <!-- 5 단계 -->
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/rectangle_solid_141414"
+            android:padding="3dp"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <TextView
+                style="@style/txt_style_medium"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="5"
+                android:textSize="10.5dp"
+                android:textColor="@color/COLOR_6B6B6B"/>
+            <TextView
+                style="@style/txt_style_medium"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="4"
+                android:text="배출"
+                android:textSize="10.5dp"
+                android:textColor="@color/COLOR_B4B4B4"/>
+
+            <TextView
+                android:visibility="invisible"
+                android:id="@+id/frag_make_profile_4_btn_minus"
+                android:onClick="onClick"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/sel_btn_minus"/>
+            <TextView
+                android:id="@+id/frag_make_profile_4_txt_value"
+                style="@style/txt_style_medium"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="3"
+                android:text="55%"
+                android:textSize="10.5dp"
+                android:textColor="@color/COLOR_B4B4B4"/>
+            <TextView
+                android:visibility="invisible"
+                android:id="@+id/frag_make_profile_4_btn_plus"
+                android:onClick="onClick"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/sel_btn_plus"/>
+
+        </LinearLayout>
+    </LinearLayout>
+    <!-- 왼쪽 Layout -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="16dp"
+        android:layout_weight="0.9"
+        android:padding="5dp"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/txt_style_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="normal"
+            android:textSize="12.5dp"
+            android:textColor="@color/COLOR_B4B4B4"
+            android:text="@string/profile_info"/>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/rectangle_solid_141414"
+            android:padding="3dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <TextView
+                android:paddingLeft="15dp"
+                style="@style/txt_style_medium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textStyle="normal"
+                android:textSize="11dp"
+                android:textColor="#6b6b6b"
+                android:layout_weight="2"
+                android:text="@string/profile_name" />
+
+            <EditText
+                android:imeOptions="actionNext"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:id="@+id/frag_make_profile_edt_name"
+                style="@style/txt_style_medium"
+                android:layout_width="0dp"
+                android:layout_weight="8"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:paddingLeft="5dp"
+                android:textColor="@color/white"
+                android:textSize="14dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/rectangle_solid_141414"
+            android:padding="3dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <TextView
+                android:paddingLeft="15dp"
+                style="@style/txt_style_medium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textStyle="normal"
+                android:textSize="11dp"
+                android:textColor="#6b6b6b"
+                android:layout_weight="2"
+                android:text="@string/input_value" />
+
+            <EditText
+                android:imeOptions="actionNext"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:id="@+id/frag_make_profile_edt_amount"
+                style="@style/txt_style_medium"
+                android:layout_width="0dp"
+                android:layout_weight="8"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:paddingLeft="5dp"
+                android:textColor="@color/white"
+                android:textSize="14dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/rectangle_solid_141414"
+            android:padding="3dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <TextView
+                android:paddingLeft="15dp"
+                style="@style/txt_style_medium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textStyle="normal"
+                android:textSize="11dp"
+                android:textColor="#6b6b6b"
+                android:layout_weight="2"
+                android:text="@string/coffee_name" />
+
+            <EditText
+                android:imeOptions="actionNext"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:id="@+id/frag_make_profile_edt_coffee"
+                style="@style/txt_style_medium"
+                android:layout_width="0dp"
+                android:layout_weight="8"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:paddingLeft="5dp"
+                android:textColor="@color/white"
+                android:textSize="14dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/rectangle_solid_141414"
+            android:padding="3dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <TextView
+                android:paddingLeft="15dp"
+                style="@style/txt_style_medium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textStyle="normal"
+                android:textSize="11dp"
+                android:textColor="#6b6b6b"
+                android:layout_weight="2"
+                android:text="@string/coffee_description" />
+
+            <EditText
+                android:imeOptions="actionNext"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:id="@+id/frag_make_profile_edt_description"
+                style="@style/txt_style_medium"
+                android:layout_width="0dp"
+                android:layout_weight="8"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:paddingLeft="5dp"
+                android:textColor="@color/white"
+                android:textSize="14dp" />
+        </LinearLayout>
+
+        <Button
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="@string/start_roasting"
+            android:textColor="@color/COLOR_RED"
+            android:background="@drawable/sel_btn_start_roast"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="5dp"
+                android:paddingLeft="5dp">
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    style="@style/txt_style_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="normal"
+                    android:textSize="13dp"
+                    android:textColor="@color/COLOR_B4B4B4"
+                    android:text="@string/predict_roastind_time"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/icon_roasting_time"/>
+                    <TextView
+                        android:id="@+id/frag_make_profile_roasting_time"
+                        style="@style/txt_style_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="normal"
+                        android:textSize="20.5dp"
+                        android:textColor="#6b6b6b"
+                        android:text="06 : 30"/>
+
+                </LinearLayout>
+            </RelativeLayout>
+
+                <ImageView
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/COLOR_202020"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"/>
+
+                <TextView
+                    android:paddingLeft="5dp"
+                    style="@style/txt_style_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10.5dp"
+                    android:textColor="@color/COLOR_6B6B6B"
+                    android:text="@string/predict_roastind_time_txt"
+                    />
+
+
+
+            </LinearLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+</LinearLayout>
