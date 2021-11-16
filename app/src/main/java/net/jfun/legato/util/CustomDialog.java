@@ -5,7 +5,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
@@ -34,7 +33,6 @@ public class CustomDialog extends Dialog {
          
         setLayout();
         setContent(mContent);
-        Log.d("where", "222222222222");
         setClickListener(mLeftClickListener , mRightClickListener);
 	}
 
@@ -53,7 +51,6 @@ public class CustomDialog extends Dialog {
     
     public CustomDialog(Context context, String content, View.OnClickListener singleListener, String lBtnText) {
         super(context , android.R.style.Theme_Translucent_NoTitleBar);
-        Log.d("where", "1111111111111");
         mContext = context;
         this.mRightClickListener = singleListener;
 //        this.mLeftClickListener = singleListener;

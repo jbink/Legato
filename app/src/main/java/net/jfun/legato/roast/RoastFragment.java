@@ -46,7 +46,6 @@ import net.jfun.legato.roast.temp.DataEntry;
 import net.jfun.legato.roast.temp.MyMarkerView;
 import net.jfun.legato.util.Constant;
 import net.jfun.legato.util.CustomDialog;
-import net.jfun.legato.util.Util;
 import net.jfun.legato.util.VerticalSeekbar;
 
 import org.json.JSONArray;
@@ -56,7 +55,6 @@ import org.json.JSONObject;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-import static net.jfun.legato.util.Util.byteArrayToHex;
 import static net.jfun.legato.util.Util.getByteToArray;
 import static net.jfun.legato.util.Util.hexStringToByteArray;
 
@@ -93,6 +91,7 @@ public class RoastFragment extends Fragment implements OnChartValueSelectedListe
     int mIntStep = -1;//시작 버튼과 동시에 step이 0으로 들어오면 첫 번째 seekbar 부터 disable 처리 후 단계 기억하기 위한 변수
 
     private boolean mBoolReadyRoasting = true;
+    private boolean mBoolCheckEndStatus = false;//종료 팝업 뜨고 종료된 후에 기존에 받아둔 데이터로 인해 화면이 동작안 상태로 나오는 문제로 인해 추가된 변수
 
 
     ArrayList<DataEntry> mHistoryData_Roast = new ArrayList<>();
@@ -201,6 +200,8 @@ public class RoastFragment extends Fragment implements OnChartValueSelectedListe
         ForceStop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Log.d("where", "finish Dialog 호출");
+
                 finishDialog();
             }
         });
@@ -538,7 +539,12 @@ public class RoastFragment extends Fragment implements OnChartValueSelectedListe
         if (operation == 0) {
             mBoolReadyRoasting = true;
         } else if (operation == 1) {
+
             if (mBoolCheckConnection == false){
+                if (mBoolCheckEndStatus == true){
+                    mBoolCheckEndStatus = false;
+                    return;
+                }
                 mBoolCheckConnection = true;
                 sendDataClickListener.isViewTransparent(true);
                 mIntTotalTime = 0;
@@ -554,11 +560,11 @@ public class RoastFragment extends Fragment implements OnChartValueSelectedListe
             String targetTemperature = String.format("%02x ", bytes[4] & 0xff) + String.format("%02x ", bytes[5] & 0xff);
 //            mTvTargetTemp.setText(strTargetTemp.substring(0,3) + "." +strTargetTemp.substring(3,4) + "℃");
             float f_targetTemperature = (float)(Integer.parseInt(targetTemperature.replaceAll(" ", ""), 16)) / 10 ;
-            Log.d("where", "f_targetTemperature1 : " + temperatureFormat.format(f_targetTemperature));
+//            Log.d("where", "f_targetTemperature1 : " + temperatureFormat.format(f_targetTemperature));
             mTvTargetTemp.setText(temperatureFormat.format(f_targetTemperature));
 
             String currentTemperature = String.format("%02x ", bytes[6] & 0xff) + String.format("%02x ", bytes[7] & 0xff);
-            Log.d("where", "currentTemperature : " + Integer.parseInt(currentTemperature.replaceAll(" ", ""), 16));
+//            Log.d("where", "currentTemperature : " + Integer.parseInt(currentTemperature.replaceAll(" ", ""), 16));
 //            String test = strCurTargetTemp.substring(0, strCurTargetTemp.length()-1) + "." + strCurTargetTemp.substring(strCurTargetTemp.length()-1, strCurTargetTemp.length());
 
             float f_currentTemperature = (float)Integer.parseInt(currentTemperature.replaceAll(" ", ""), 16) / 10 ;
@@ -579,11 +585,11 @@ public class RoastFragment extends Fragment implements OnChartValueSelectedListe
                 mIntStep = iStep;
             }
             mIvStep[iStep].setBackgroundResource(getResources().getIdentifier("btn_step_"+(iStep+1)+"_enable", "drawable",  getActivity().getPackageName()));
-            Log.d("where", "roastingStep : " + Integer.parseInt(roastingStep.replaceAll(" ", ""), 16));
+//            Log.d("where", "roastingStep : " + Integer.parseInt(roastingStep.replaceAll(" ", ""), 16));
 
 
             String roastingTime = String.format("%02x ", bytes[8] & 0xff) + String.format("%02x ", bytes[9] & 0xff);
-            Log.d("where", "roastingTime : " + Integer.parseInt(roastingTime.replaceAll(" ", ""), 16));
+//            Log.d("where", "roastingTime : " + Integer.parseInt(roastingTime.replaceAll(" ", ""), 16));
             int totalTime = Integer.parseInt(roastingTime.replaceAll(" ", ""), 16);
             mTvRoastingTime.setText(""+sdf.format(totalTime/60)+" : "+sdf.format(totalTime%60));
 
@@ -591,12 +597,12 @@ public class RoastFragment extends Fragment implements OnChartValueSelectedListe
             if (totalTime%60 == 0 && iStep>0){//60초마다 이전 ROR값이 차이만큼 저장
                 mIntROR_Value = f_currentTemperature - f_prefvTemperature;
                 f_prefvTemperature = f_currentTemperature;
-                Log.d("where", "f_currentTemperature : " + f_currentTemperature);
-                Log.d("where", "mIntROR_Value2 : " + mIntROR_Value);
+//                Log.d("where", "f_currentTemperature : " + f_currentTemperature);
+//                Log.d("where", "mIntROR_Value2 : " + mIntROR_Value);
                 if (mBoolCheckAddRorData == false) {
                     mBoolCheckAddRorData = true;
                 } else {
-                    Log.d("where", "mBoolCheckAddRorData : " + mIntROR_Value);
+//                    Log.d("where", "mBoolCheckAddRorData : " + mIntROR_Value);
                     mTvROR.setText(temperatureFormat.format(mIntROR_Value));
                     addROREntry(mIntROR_Value);
                 }
@@ -608,24 +614,24 @@ public class RoastFragment extends Fragment implements OnChartValueSelectedListe
             addADEntry(Float.valueOf(String.valueOf(Integer.parseInt(AD_Value.replaceAll(" ", ""), 16))));
 
             String fan = String.format("%02x ", bytes[13] & 0xff);
-            Log.d("where", "fan : " + Integer.parseInt(fan.replaceAll(" ", ""), 16));
+//            Log.d("where", "fan : " + Integer.parseInt(fan.replaceAll(" ", ""), 16));
 
             String step1 = String.format("%02x ", bytes[14] & 0xff);
-            Log.d("where", "step1 : " + Integer.parseInt(step1.replaceAll(" ", ""), 16));
-            Log.d("where", "step1-1 : " + getRoastingSectionPercent(Integer.parseInt(step1.replaceAll(" ", ""), 16)));
+//            Log.d("where", "step1 : " + Integer.parseInt(step1.replaceAll(" ", ""), 16));
+//            Log.d("where", "step1-1 : " + getRoastingSectionPercent(Integer.parseInt(step1.replaceAll(" ", ""), 16)));
 
             String step2 = String.format("%02x ", bytes[15] & 0xff);
-            Log.d("where", "step2 : " + getRoastingSectionPercent(Integer.parseInt(step2.replaceAll(" ", ""), 16)));
+//            Log.d("where", "step2 : " + getRoastingSectionPercent(Integer.parseInt(step2.replaceAll(" ", ""), 16)));
 
             String step3 = String.format("%02x ", bytes[16] & 0xff);
-            Log.d("where", "step3 : " + Integer.parseInt(step3.replaceAll(" ", ""), 16));
-            Log.d("where", "step3-1 : " + getRoastingSectionPercent(Integer.parseInt(step3.replaceAll(" ", ""), 16)));
+//            Log.d("where", "step3 : " + Integer.parseInt(step3.replaceAll(" ", ""), 16));
+//            Log.d("where", "step3-1 : " + getRoastingSectionPercent(Integer.parseInt(step3.replaceAll(" ", ""), 16)));
 
             String step4 = String.format("%02x ", bytes[17] & 0xff);
-            Log.d("where", "step4 : " + getRoastingSectionPercent(Integer.parseInt(step4.replaceAll(" ", ""), 16)));
+//            Log.d("where", "step4 : " + getRoastingSectionPercent(Integer.parseInt(step4.replaceAll(" ", ""), 16)));
 
             String totalCount = String.format("%02x ", bytes[18] & 0xff) + String.format("%02x ", bytes[19] & 0xff);;
-            Log.d("where", "totalCount : " + Integer.parseInt(totalCount.replaceAll(" ", ""), 16));
+//            Log.d("where", "totalCount : " + Integer.parseInt(totalCount.replaceAll(" ", ""), 16));
 
 //            byte[] stepValue = new byte[4];
 //            for (int i=0 ; i<stepValue.length ; i++){
@@ -633,6 +639,7 @@ public class RoastFragment extends Fragment implements OnChartValueSelectedListe
 //            }
 //            setFireSeekbarValue(stepValue);
         } else if (operation == 2) {
+            Log.d("where", "operation == 2");
             if(mBoolReadyRoasting == false){
                 return;
             }
@@ -650,7 +657,6 @@ public class RoastFragment extends Fragment implements OnChartValueSelectedListe
             if(timeHandler != null) {
                 timeHandler.removeMessages(0);
             }
-
             sendDataClickListener.sendData(mByteProfileData);
             sendDataClickListener.isViewTransparent(false);
 
@@ -774,7 +780,7 @@ public class RoastFragment extends Fragment implements OnChartValueSelectedListe
         public void handleMessage(@NonNull Message msg) {
             super.handleMessage(msg);
             mIntTotalTime++;
-            Log.d("time" , ""+sdf.format(mIntTotalTime/60)+" : "+sdf.format(mIntTotalTime%60));
+//            Log.d("time" , ""+sdf.format(mIntTotalTime/60)+" : "+sdf.format(mIntTotalTime%60));
             mTvTotalTime.setText(""+sdf.format(mIntTotalTime/60)+" : "+sdf.format(mIntTotalTime%60));
             timeHandler.sendEmptyMessageDelayed(0, 1000);
         }
@@ -993,6 +999,7 @@ public class RoastFragment extends Fragment implements OnChartValueSelectedListe
 
                 sendDataClickListener.sendData(mByteProfileData);
                 sendDataClickListener.isViewTransparent(false);
+                mBoolCheckEndStatus = true;
 
             }
         }, getString(R.string.btn_cancel), getString(R.string.btn_finish));

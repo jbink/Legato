@@ -29,10 +29,8 @@ import net.jfun.legato.history.HistoryFragment;
 import net.jfun.legato.history.mode.ModeListFragment;
 import net.jfun.legato.qr.QrActivity;
 import net.jfun.legato.qr.QrFragment2;
-import net.jfun.legato.roast.FanOnDialogActivity;
 import net.jfun.legato.roast.RoastFragment;
 import net.jfun.legato.roast.profile.ProfileListFragment;
-import net.jfun.legato.roast.profile.make.MakeProfileActivity;
 import net.jfun.legato.roast.temp.TempFragment;
 import net.jfun.legato.setting.SettingFragment;
 import net.jfun.legato.util.Constant;
@@ -41,7 +39,6 @@ import net.jfun.legato.util.ProgressDialogUtil;
 import net.jfun.legato.util.SharedPreferencesUtils;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Method;
 import java.util.UUID;
 
@@ -83,6 +80,8 @@ public class MainActivity extends BaseActivity implements
         setContentView(R.layout.activity_main);
 
         mContext = MainActivity.this;
+
+//        Crashes.getLastSessionCrashReport();
 
         mTvTitle = findViewById(R.id.main_title);
         mTvTitleIcon = findViewById(R.id.main_title_icon);
@@ -144,7 +143,7 @@ public class MainActivity extends BaseActivity implements
                 findViewById(R.id.main_menu_btn_roast).setBackground(ContextCompat.getDrawable(mContext, R.drawable.icon_roast_on));
                 break;
             case R.id.main_menu_btn_qr :
-                mTvTitle.setText(R.string.qr_code);
+//                mTvTitle.setText(R.string.qr_code);
                 mTvTitleIcon.setBackground(ContextCompat.getDrawable(mContext, R.drawable.icon_qr_on));
 //                fragmentLeftReplace(FRAG_QR);
                 Intent intent = new Intent(mContext, QrActivity.class);
@@ -475,26 +474,36 @@ public class MainActivity extends BaseActivity implements
         @Override
         public void handleMessage(Message msg){
             if(msg.what == MESSAGE_READ){
-                String readMessage = null;
-                try {
-                    readMessage = new String((byte[]) msg.obj, "UTF-8");
+//                String readMessage = null;
+                byte[] bytes = (byte[]) msg.obj;
+//                    readMessage = new String(bytes, "UTF-8");
+//                    Log.d("where1", "Main : " + byteArrayToHex((byte[]) msg.obj));
 
-                    Log.d("where1", "Main : " + byteArrayToHex((byte[]) msg.obj));
-                    Fragment currFrag =  getSupportFragmentManager().findFragmentByTag("sub"+FRAG_PROFILE_LIBRARY);
-                    if (currFrag != null) {
-                        if (currFrag instanceof RoastFragment){
-                            ((RoastFragment) currFrag).getDataToDevice((byte[]) msg.obj);
-//                            Log.d("where", "RoastFragment : " + byteArrayToHex((byte[]) msg.obj));
+                    if(Constant.FD.equals(String.valueOf(bytes[0])) && Constant.FD.equals(String.valueOf(bytes[1]))
+                            && Constant.FE.equals(String.valueOf(bytes[22])) && Constant.FE.equals(String.valueOf(bytes[23])) ) {
+
+                        Fragment currFrag =  getSupportFragmentManager().findFragmentByTag("sub"+FRAG_PROFILE_LIBRARY);
+                        if (currFrag != null) {
+                            if (currFrag instanceof RoastFragment){
+                                if(Constant.FD.equals(String.valueOf(bytes[0])) && Constant.FD.equals(String.valueOf(bytes[1]))
+                                        && Constant.FE.equals(String.valueOf(bytes[22])) && Constant.FE.equals(String.valueOf(bytes[23])) ) {
+                                    ((RoastFragment) currFrag).getDataToDevice(bytes);
+                                } else {
+                                    Log.e("where", "Error Input Data!! : " + byteArrayToHex(bytes));
+                                }
+                            } else {
+                                Log.d("where", "currFrag : " + byteArrayToHex(bytes));
+                            }
                         } else {
-                            Log.d("where", "currFrag : " + byteArrayToHex((byte[]) msg.obj));
+                            final Fragment frag = getSupportFragmentManager().findFragmentById(R.id.main_fragment_area);
+    //                        if (frag instanceof RoastFragment){
+    //                            ((RoastFragment) frag).getDataToDevice((byte[]) msg.obj);
+    //                        } else {
+                                Log.d("where", "Main : " + byteArrayToHex(bytes));
+    //                        }
                         }
                     } else {
-                        final Fragment frag = getSupportFragmentManager().findFragmentById(R.id.main_fragment_area);
-//                        if (frag instanceof RoastFragment){
-//                            ((RoastFragment) frag).getDataToDevice((byte[]) msg.obj);
-//                        } else {
-                            Log.d("where", "Main : " + byteArrayToHex((byte[]) msg.obj));
-//                        }
+                        Log.e("where", "Error Input Data!! : " + byteArrayToHex(bytes));
                     }
 
 //                    final Fragment frag = getSupportFragmentManager().findFragmentById(R.id.main_fragment_area);
@@ -506,9 +515,6 @@ public class MainActivity extends BaseActivity implements
 
 
 //                    Log.d("where", "" + byteArrayToHex((byte[]) msg.obj));
-                } catch (UnsupportedEncodingException e) {
-                    e.printStackTrace();
-                }
             }
             else if (msg.what == SOCKET_CLOSED){
                 mBleDevice = null;

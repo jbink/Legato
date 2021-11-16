@@ -1,16 +1,12 @@
 package net.jfun.legato.bluetooth;
 
-import android.annotation.SuppressLint;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
-import android.bluetooth.BluetoothSocket;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,19 +27,13 @@ import net.jfun.legato.R;
 import net.jfun.legato.WebviewActivity;
 import net.jfun.legato.api.API_Adapter;
 import net.jfun.legato.api.BaseDTO;
-import net.jfun.legato.history.HistoryListApiDTO;
 import net.jfun.legato.tutorial.TutorialActivity;
-import net.jfun.legato.tutorial.TutorialDetailActivity;
 import net.jfun.legato.util.Constant;
 import net.jfun.legato.util.ProgressDialogUtil;
 import net.jfun.legato.util.SharedPreferencesUtils;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Set;
-import java.util.UUID;
 
 public class BluetoothFragment extends Fragment {
 
@@ -143,7 +133,7 @@ public class BluetoothFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), WebviewActivity.class);
-                intent.putExtra(Constant.EXTRA_URL, "http://j-fun.batns.co.kr/123?preview_mode=1");
+                intent.putExtra(Constant.EXTRA_URL, "http://j-fun.batns.co.kr/119?preview_mode=1");
                 startActivity(intent);
             }
         });
